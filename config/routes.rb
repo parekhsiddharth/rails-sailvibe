@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :yachts, only: %i[index show new create] do
     resources :reviews, only: %i[new create]
     resources :bookings, only: %i[new create]
+
+    get "/booking-success", to: "bookings#success"
+    post "/confirm-booking", to: "bookings#confirm"
   end
 
 end
