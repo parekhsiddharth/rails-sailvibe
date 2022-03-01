@@ -3,20 +3,33 @@ class BookingsController < ApplicationController
     @booking = Booking.new(yacht_id: params[:yacht_id])
   end
 
-  def create
+  def confirm
     @booking = Booking.new(booking_params)
     if @booking.valid?
       @booking.save
-      redirect_to yacht_path(id: @booking.yacht_id)
+      render 'success'
     else
       @booking = Booking.new
-      render 'yacht/show'
+      render 'new'
     end
+  end
+
+  def create
+    @booking = Booking.new(booking_params)
+    if @booking.valid?
+      # redirect_to yacht_confirm_booking_path(yacht_id: params[:yacht_id])
+    else
+      @booking = Booking.new
+    end
+    render 'new'
+  end
+
+  def success
   end
 
   private
 
   def booking_params
-    params.require(:review).permit(:rating, :content, :yacht_id, :user_id)
+    params.require(:booking).permit(:start_date, :end_date, :yacht_id, :user_id)
   end
 end
