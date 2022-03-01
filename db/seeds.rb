@@ -5,16 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "Wiping seeds"
+# puts "Wiping seeds"
 
-User.destroy_all
+# User.destroy_all
 
-puts "Creating seeds"
+# puts "Creating seeds"
 
+# User.create(email: "sid@sailview.com", password: "secret")
+# User.create(email: "ervina@sailview.com", password: "secret")
+# User.create(email: "sony@sailview.com", password: "secret")
+# User.create(email: "njoroge@sailview.com", password: "secret")
 
-User.create(email: "sid@sailview.com", password: "secret")
-User.create(email: "ervina@sailview.com", password: "secret")
-User.create(email: "sony@sailview.com", password: "secret")
-User.create(email: "njoroge@sailview.com", password: "secret")
-
-puts "seeds = #{User.count}"
+# puts "seeds = #{User.count}"
