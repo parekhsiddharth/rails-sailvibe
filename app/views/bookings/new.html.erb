@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="h2 text-center">Booking Details</h1>
+  <div class="row justify-content-center">
+    <div class="col col-lg-5">
+      <%= simple_form_for [@booking.yacht, @booking], method: :post, url: yacht_confirm_booking_path do |f| %>
+        <%= f.input :start_date, as: :hidden, html5: true %>
+        <%= f.input :end_date, as: :hidden, html5: true %>
+        <%= f.association :user, as: :hidden, input_html: { value: current_user.id } %>
+        <%= f.association :yacht, as: :hidden %>
+        <%= f.button :submit, class: 'btn-submit' %>
+      <% end %>
+    </div>
+  </div>
+</div>

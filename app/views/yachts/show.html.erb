@@ -37,21 +37,13 @@
             </p>
         </div>
         <div class="col-12">
-          <div class="row">
-            <div class="col-12 col-lg-6">
-              <label for="">From</label>
-              <input type="date" class="form-control">
-            </div>
-            <div class="col-12 col-lg-6">
-              <label for="">To</label>
-              <input type="date" class="form-control">
-            </div>
-          </div>
-        </div>
-        <div class="col-12 mt-4">
-          <button class="btn-submit">
-            Book Now
-          </button>
+          <%= simple_form_for [@yacht, @booking] do |f| %>
+            <%= f.input :start_date, as: :date, html5: true %>
+            <%= f.input :end_date, as: :date, html5: true %>
+            <%= f.association :user, as: :hidden, input_html: { value: current_user.id } %>
+            <%= f.association :yacht, as: :hidden %>
+            <%= f.button :submit, class: 'btn-submit' %>
+          <% end %>
         </div>
       </div>
     </div>
