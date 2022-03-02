@@ -32,3 +32,14 @@
   .container-fluid {
     z-index: 1;
   }
+
+  .notice {
+    margin: 0;
+  }
+
+  .bg-2 {
+    background-image: url(asset_path('background.jpeg'));
+    background-repeat: none;
+    background-size: cover;
+    height: 100%;
+  }
