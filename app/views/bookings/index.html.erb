@@ -13,6 +13,7 @@
               <i class="fa-solid fa-location-dot"></i>
               <%# <p> $<%= booking.yacht.price %>
               <p> <%= booking.start_date.to_formatted_s(:long) %> - <%= booking.end_date.to_formatted_s(:long) %> </p>
+              <p><%= link_to 'Delete', yacht_booking_path(id: booking.id, yacht_id: booking.yacht.id), method: :delete, data: {:confirm => 'Are you sure?'}, class: "card-btn btn btn-danger text-white" %></p>
             </div>
           </div>
         </div>
