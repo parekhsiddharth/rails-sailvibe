@@ -27,3 +27,18 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 }
+
+.wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.background-image {
+  background-repeat: none;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+}
