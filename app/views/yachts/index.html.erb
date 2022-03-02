@@ -1,165 +1,24 @@
-<div class="cards">
-  <div class="card">
-    <img src="https://cdn.boatinternational.com/files/2021/05/db657020-bf27-11eb-a38c-6f720ff20a6d-soaring-wsa.jpg" alt="Picture of Yacht 1">
-    <div class="card-title">
-      <% @yachts.each do |yacht| %>
-        <h1><%= link_to "#{yacht.name}", yacht_path(yacht.id) %></h1>
+<div class="bg-2">
+  <div class="container d-flex justify-content-center gap-3 flex-wrap py-5 ">
+    <% @yachts.each do |yacht| %>
+      <%= link_to yacht_path(id: yacht.id), class:"text-decoration-none text-black" do %>
+        <div class="card">
+          <img src="<%= url_for(yacht.photos[0]) %>" alt="" class="img-fluid img-object-fit-cover card-img-top">
+          <div class="card-body py-2 px-3">
+            <div class="card-title">
+              <h1><%= yacht.name %></h1>
+            </div>
+            <div class="card-divider">
+              <div class="card-content">
+                <i class="fa-solid fa-location-dot"></i>
+                <p> $<%= yacht.price %> /day</p>
 
-
-    </div>
-    <div class="card-divider">
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> "Williamstown" </p>
-        <p> <%= "#{yacht.price}"%> </p>
-      </div>
-       <% end %>
-
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> 12 Guests </p>
-        <p> 4 Stars </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn.boatinternational.com/files/2021/05/db657020-bf27-11eb-a38c-6f720ff20a6d-soaring-wsa.jpg" alt="Picture of Yacht 1">
-    <div class="card-title">
-      <h1>Sony 33 Golden</h1>
-    </div>
-    <div class="card-divider">
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> Williamstown </p>
-        <p> $9000/day </p>
-      </div>
-
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> 12 Guests </p>
-        <p> 4 Stars </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn.boatinternational.com/files/2021/05/db657020-bf27-11eb-a38c-6f720ff20a6d-soaring-wsa.jpg" alt="Picture of Yacht 1">
-    <div class="card-title">
-      <h1>Sony 33 Golden</h1>
-    </div>
-    <div class="card-divider">
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> Williamstown </p>
-        <p> $9000/day </p>
-      </div>
-
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> 12 Guests </p>
-        <p> 4 Stars </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn.boatinternational.com/files/2021/05/db657020-bf27-11eb-a38c-6f720ff20a6d-soaring-wsa.jpg" alt="Picture of Yacht 1">
-    <div class="card-title">
-      <h1>Sony 33 Golden</h1>
-    </div>
-    <div class="card-divider">
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> Williamstown </p>
-        <p> $9000/day </p>
-      </div>
-
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> 12 Guests </p>
-        <p> 4 Stars </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn.boatinternational.com/files/2021/05/db657020-bf27-11eb-a38c-6f720ff20a6d-soaring-wsa.jpg" alt="Picture of Yacht 1">
-    <div class="card-title">
-      <h1>Sony 33 Golden</h1>
-    </div>
-    <div class="card-divider">
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> Williamstown </p>
-        <p> $9000/day </p>
-      </div>
-
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> 12 Guests </p>
-        <p> 4 Stars </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn.boatinternational.com/files/2021/05/db657020-bf27-11eb-a38c-6f720ff20a6d-soaring-wsa.jpg" alt="Picture of Yacht 1">
-    <div class="card-title">
-      <h1>Sony 33 Golden</h1>
-    </div>
-    <div class="card-divider">
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> Williamstown </p>
-        <p> $9000/day </p>
-      </div>
-
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> 12 Guests </p>
-        <p> 4 Stars </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn.boatinternational.com/files/2021/05/db657020-bf27-11eb-a38c-6f720ff20a6d-soaring-wsa.jpg" alt="Picture of Yacht 1">
-    <div class="card-title">
-      <h1>Sony 33 Golden</h1>
-    </div>
-    <div class="card-divider">
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> Williamstown </p>
-        <p> $9000/day </p>
-      </div>
-
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> 12 Guests </p>
-        <p> 4 Stars </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="https://cdn.boatinternational.com/files/2021/05/db657020-bf27-11eb-a38c-6f720ff20a6d-soaring-wsa.jpg" alt="Picture of Yacht 1">
-    <div class="card-title">
-      <h1>Sony 33 Golden</h1>
-    </div>
-    <div class="card-divider">
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> Williamstown </p>
-        <p> $9000/day </p>
-      </div>
-
-      <div class="card-content">
-        <i class="fa-solid fa-location-dot"></i>
-        <p> 12 Guests </p>
-        <p> 4 Stars </p>
-      </div>
-    </div>
+                <p> <%= yacht.description.truncate(40) %> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
