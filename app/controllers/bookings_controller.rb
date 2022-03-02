@@ -1,10 +1,16 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.all
+    @my_bookings = @bookings.where(user: current_user)
+  end
+
   def new
     @booking = Booking.new(yacht_id: params[:yacht_id])
   end
 
   def confirm
     @booking = Booking.new(booking_params)
+    @booking.user_id = current_user.id
     if @booking.valid?
       @booking.save
       render 'success'
