@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user_id = current_user.id
     if @booking.valid?
       # redirect_to yacht_confirm_booking_path(yacht_id: params[:yacht_id])
     else
