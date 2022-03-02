@@ -1,6 +1,22 @@
-<h1>My Bookings</h1>
-<ul>
+<div class="bg-2">
+  <h1>My Bookings</h1>
+  <div class="container d-flex justify-content-center gap-3 flex-wrap py-5 ">
     <% @my_bookings.each do |booking| %>
-      <p><%=booking.yacht.name%></p>
+      <div class="card">
+        <img src="<%= url_for(booking.yacht.photos[0]) %>" alt="" class="img-fluid img-object-fit-cover card-img-top">
+        <div class="card-body py-2 px-3">
+          <div class="card-title">
+            <h1><%= booking.yacht.name %></h1>
+          </div>
+          <div class="card-divider">
+            <div class="card-content">
+              <i class="fa-solid fa-location-dot"></i>
+              <%# <p> $<%= booking.yacht.price %>
+              <p> <%= booking.start_date %> - <%= booking.end_date %> </p>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-</ul>
+  </div>
+</div>
