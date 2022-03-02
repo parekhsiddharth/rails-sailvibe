@@ -34,6 +34,12 @@ class BookingsController < ApplicationController
   def success
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to yacht_bookings_path(yacht_id: @booking.yacht.id)
+  end
+
   private
 
   def booking_params
