@@ -13,13 +13,9 @@ Rails.application.routes.draw do
 
     get     "/booking-success",   to: "bookings#success"
     post    "/confirm-booking",   to: "bookings#confirm"
-    # get   "/bookings",          to: "bookings#index", as: "bookings"
-    # post    "/edit",              to: "yachts#edit"
-    # patch   "",                   to: "yachts#update"
   end
 
   resources :bookings, only: %i[index] do
     get "/bookings",              to: "bookings#index"
   end
-
 end

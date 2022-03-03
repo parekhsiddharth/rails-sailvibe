@@ -35,19 +35,11 @@ class YachtsController < ApplicationController
     @my_yachts = @user.yachts
   end
 
-  # def edit
-  #   @user = current_user
-  #   @my_yachts = @user.yachts[:id]
-  # end
-
   def edit
-    # @yacht.user_id = current_user.id
-    # @my_yacht = Yacht.find(params[:id])
   end
 
   def update
     @my_yacht = Yacht.find(params[:id])
-    # @my_yacht.user_id = current_user.id
     if @my_yacht.update(yacht_params)
       redirect_to my_yachts_yachts_path
     else
@@ -56,7 +48,6 @@ class YachtsController < ApplicationController
   end
 
   def destroy
-    # @my_yacht = Yacht.find(params[:id])
     @my_yacht.destroy
     redirect_to my_yachts_yachts_path
   end

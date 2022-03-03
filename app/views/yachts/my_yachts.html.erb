@@ -13,7 +13,7 @@
               <i class="fa-solid fa-location-dot"></i>
               <p> $<%= my_yacht.price %>
               <p><%= link_to 'Edit', edit_yacht_path(my_yacht), class: "card-btn btn btn-danger text-white" %></p>
-              <p><%= link_to 'Delete', yacht_path(my_yacht.id), data: {:confirm => 'Are you sure?'}, class: "card-btn btn btn-danger text-white" %></p>
+              <p><%= link_to 'Delete', yacht_path(my_yacht), method: :delete, data: {:confirm => 'Are you sure?'}, class: "card-btn btn btn-danger text-white" %></p>
             </div>
           </div>
         </div>

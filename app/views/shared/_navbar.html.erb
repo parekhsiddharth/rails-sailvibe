@@ -5,10 +5,6 @@
     <% end %>
 
     <% if (params[:controller] == "yachts") || (params[:controller] == "bookings" && params[:action] == "index") %>
-      <%# # # (current_page?(action:'index') ||
-      #  current_page?(action:'show')   ||
-      #  current_page?(action:'new') ||
-      #  current_page?(action:'create'))%>
       <%= form_tag yachts_path, method: :get, class:"input-group" do %>
             <%= text_field_tag :query, params[:query], class: "form-control bg-light bg-gradient bg-opacity-10 text-white", placeholder: "Find a yacht" %>
             <div class="input-group-append"><%= submit_tag "Search", class:"btn btn-outline-light" %></div>
@@ -30,7 +26,7 @@
             <i class="fa fa-user fa-2x text-white" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "View my listings", my_yachts_yachts_path, class: "dropdown-item" %>
-              <%= link_to "View my bookings", "bookings", class: "dropdown-item" %>
+              <%= link_to "View my bookings", bookings_path, class: "dropdown-item" %>
               <%= link_to "Add a new listing", new_yacht_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
