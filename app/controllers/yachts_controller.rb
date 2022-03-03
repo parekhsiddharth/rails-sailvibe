@@ -2,7 +2,11 @@ class YachtsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @yachts = Yacht.all
+    if params[:query].present?
+      @yachts = Yacht.global_search("%#{params[:query]}%")
+    else
+      @yachts = Yacht.all
+    end
   end
 
   def show
