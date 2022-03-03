@@ -1,32 +1,5 @@
 // Import page-specific CSS files here.
 @import "home";
-.card {
-  /* Add shadows to create the "card" effect */
-  height: 408px;
-  width: 324px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-}
-.card img{
-  height:263px;
-  width:324px;
-}
-
-.card-title {
-  font-size: 24;
-  font-weight: bold;
-}
-
-.card-divider {
-  display: flex;
-  gap: 30px;
-}
-
-.cards {
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
-}
 
 .wrap {
   overflow: hidden;
