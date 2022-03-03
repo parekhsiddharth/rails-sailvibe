@@ -35,13 +35,13 @@
         </div>
         <div class="col-12">
           <p>
-            <%= @yacht.description %>
-            </p>
+            <%= @yacht.location %>
+          </p>
         </div>
         <div class="col-12">
           <p>
-            <%= @yacht.location %>
-            </p>
+            <%= @yacht.description %>
+          </p>
         </div>
         <div class="col-12">
           <%= simple_form_for [@yacht, @booking] do |f| %>
