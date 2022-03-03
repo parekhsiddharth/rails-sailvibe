@@ -4,6 +4,18 @@
       <%= image_tag "logo.png" %>
     <% end %>
 
+    <% if (params[:controller] == "yachts") || (params[:controller] == "bookings" && params[:action] == "index") %>
+      <%# # # (current_page?(action:'index') ||
+      #  current_page?(action:'show')   ||
+      #  current_page?(action:'new') ||
+      #  current_page?(action:'create'))%>
+      <%= form_tag yachts_path, method: :get, class:"input-group" do %>
+            <%= text_field_tag :query, params[:query], class: "form-control bg-light bg-gradient bg-opacity-10 text-white", placeholder: "Find a yacht" %>
+            <div class="input-group-append"><%= submit_tag "Search", class:"btn btn-outline-light" %></div>
+          <% end %>
+
+    <% end %>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
