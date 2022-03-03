@@ -16,5 +16,4 @@ class Yacht < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-
 end

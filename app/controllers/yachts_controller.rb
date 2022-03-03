@@ -3,7 +3,6 @@ class YachtsController < ApplicationController
   before_action :find_yacht, only: %i[edit update destroy]
 
   def index
-
     @yachts = Yacht.all
 
     @markers = @yachts.geocoded.map do |yacht|

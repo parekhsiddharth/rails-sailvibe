@@ -1,11 +1,11 @@
-<div class="navbar navbar-expand-sm navbar-light bg-primary navbar-lewagon bg-2">
-  <div class="container-fluid">
+<div class="bg-dark bg-opacity-10 navbar navbar-expand-sm navbar-lewagon navbar-light position-fixed top-0 w-100">
+  <div class="container">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png" %>
     <% end %>
 
     <% if (params[:controller] == "yachts") || (params[:controller] == "bookings" && params[:action] == "index") %>
-      <%= form_tag yachts_path, method: :get, class:"input-group" do %>
+      <%= form_tag yachts_path, method: :get, class:"input-group w-50" do %>
             <%= text_field_tag :query, params[:query], class: "form-control bg-light bg-gradient bg-opacity-10 text-white", placeholder: "Find a yacht" %>
             <div class="input-group-append"><%= submit_tag "Search", class:"btn btn-outline-light" %></div>
           <% end %>
@@ -17,8 +17,8 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item mx-3">
           <%= link_to "Browse all", yachts_path, class: "nav-link text-white" %>
         </li>
         <% if user_signed_in? %>
