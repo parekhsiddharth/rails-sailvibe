@@ -1,7 +1,9 @@
 class YachtsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :find_yacht, only: %i[edit update destroy]
 
   def index
+
     @yachts = Yacht.all
 
     @markers = @yachts.geocoded.map do |yacht|
@@ -10,6 +12,12 @@ class YachtsController < ApplicationController
         lng: yacht.longitude,
         info_window: render_to_string(partial: "info_window", locals: { yacht: yacht })
       }
+
+    if params[:query].present?
+      @yachts = Yacht.global_search("%#{params[:query]}%")
+    else
+      @yachts = Yacht.all
+
     end
   end
 
@@ -33,9 +41,35 @@ class YachtsController < ApplicationController
     end
   end
 
+  def my_yachts
+    @user = current_user
+    @my_yachts = @user.yachts
+  end
+
+  def edit
+  end
+
+  def update
+    @my_yacht = Yacht.find(params[:id])
+    if @my_yacht.update(yacht_params)
+      redirect_to my_yachts_yachts_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @my_yacht.destroy
+    redirect_to my_yachts_yachts_path
+  end
+
   private
 
   def yacht_params
     params.require(:yacht).permit(:name, :price, :description, :location, photos: [])
+  end
+
+  def find_yacht
+    @my_yacht = Yacht.find(params[:id])
   end
 end

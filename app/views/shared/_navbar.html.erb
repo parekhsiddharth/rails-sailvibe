@@ -4,6 +4,14 @@
       <%= image_tag "logo.png" %>
     <% end %>
 
+    <% if (params[:controller] == "yachts") || (params[:controller] == "bookings" && params[:action] == "index") %>
+      <%= form_tag yachts_path, method: :get, class:"input-group" do %>
+            <%= text_field_tag :query, params[:query], class: "form-control bg-light bg-gradient bg-opacity-10 text-white", placeholder: "Find a yacht" %>
+            <div class="input-group-append"><%= submit_tag "Search", class:"btn btn-outline-light" %></div>
+          <% end %>
+
+    <% end %>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,8 +25,8 @@
           <li class="nav-item dropdown">
             <i class="fa fa-user fa-2x text-white" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "View my listings", yachts_path, class: "dropdown-item" %>
-              <%= link_to "View my bookings", "bookings", class: "dropdown-item" %>
+              <%= link_to "View my listings", my_yachts_yachts_path, class: "dropdown-item" %>
+              <%= link_to "View my bookings", bookings_path, class: "dropdown-item" %>
               <%= link_to "Add a new listing", new_yacht_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
