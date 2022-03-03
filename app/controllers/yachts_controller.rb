@@ -12,6 +12,7 @@ class YachtsController < ApplicationController
         lng: yacht.longitude,
         info_window: render_to_string(partial: "info_window", locals: { yacht: yacht })
       }
+    end
 
     if params[:query].present?
       @yachts = Yacht.global_search("%#{params[:query]}%")
