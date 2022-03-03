@@ -6,6 +6,7 @@
   transition: 0.3s;
   border-radius: 10px;
   box-shadow: 2px 2px 8px #222222d4;
+  overflow: hidden;
 
   p {
     margin-bottom: 6px;
@@ -15,6 +16,15 @@
 .card img{
   height:263px;
   width:324px;
+}
+
+.confirm-card {
+  padding: 0;
+}
+
+.confirm-card img {
+  width: 100%;
+  height: auto;
 }
 
 .card-title {

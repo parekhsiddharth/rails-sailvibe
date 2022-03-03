@@ -1,15 +1,17 @@
-<div class="container">
-  <h1 class="h2 text-center">Add a new Yacht</h1>
-  <div class="row justify-content-center">
-    <div class="col col-lg-5">
-      <%= simple_form_for @yacht do |f| %>
-        <%= f.input :name %>
-        <%= f.input :price %>
-        <%= f.input :description %>
-        <%= f.input :location %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.button :submit %>
-      <% end %>
+<div class="bg-2 wrap">
+  <div class="container pt-5 mt-5">
+    <h1 class="h2 text-center fw-bold text-white">Add a new Yacht</h1>
+    <div class="row justify-content-center">
+      <div class="col col-lg-5">
+        <%= simple_form_for @yacht do |f| %>
+          <%= f.input :name %>
+          <%= f.input :price %>
+          <%= f.input :description %>
+          <%= f.input :location %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.button :submit , class: 'btn btn-success text-white'%>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
