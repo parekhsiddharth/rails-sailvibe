@@ -1,0 +1,23 @@
+<div class="bg-2">
+  <h1 class="d-flex justify-content-center">My Listings</h1>
+  <div class="container d-flex justify-content-center gap-3 flex-wrap py-5 ">
+    <% @my_yachts.each do |my_yacht| %>
+      <div class="card">
+        <img src="<%= url_for(my_yacht.photos[0]) %>" alt="" class="img-fluid img-object-fit-cover card-img-top">
+        <div class="card-body py-2 px-3">
+          <div class="card-title">
+            <h1><%= my_yacht.name %></h1>
+          </div>
+          <div class="card-divider">
+            <div class="card-content">
+              <i class="fa-solid fa-location-dot"></i>
+              <p> $<%= my_yacht.price %>
+              <p><%= link_to 'Edit', edit_yacht_path(my_yacht), class: "card-btn btn btn-danger text-white" %></p>
+              <p><%= link_to 'Delete', yacht_path(my_yacht.id), data: {:confirm => 'Are you sure?'}, class: "card-btn btn btn-danger text-white" %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
