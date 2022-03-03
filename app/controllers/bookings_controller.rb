@@ -24,11 +24,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user_id = current_user.id
     if @booking.valid?
-      # redirect_to yacht_confirm_booking_path(yacht_id: params[:yacht_id])
+      render 'new'
     else
       @booking = Booking.new
+      flash[:alert] = "Date not available, please try another date."
+      redirect_back(fallback_location: root_path)
     end
-    render 'new'
   end
 
   def success
@@ -37,7 +38,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to yacht_bookings_path(yacht_id: @booking.yacht.id)
+    redirect_to bookings_path
   end
 
   private
