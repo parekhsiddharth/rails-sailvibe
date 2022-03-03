@@ -22,8 +22,9 @@
       <% end %>
     <% end %>
   </div>
-  <div style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['pk.eyJ1IjoiZXJ2aW5hdGhlcmVzYSIsImEiOiJjbDBhOWhqcXMwbDN4M2NtZzY1ZXd4YWxlIn0.biMHmiflvaKOKMjZ2FA3IQ'] %>"></div>
+</div>
+<div style="width: 100%; height: 600px;"
+data-controller="mapbox"
+data-mapbox-markers-value="<%= @markers.to_json %>"
+data-mapbox-api-key-value="<%= ENV['pk.eyJ1IjoiZXJ2aW5hdGhlcmVzYSIsImEiOiJjbDBhOWhqcXMwbDN4M2NtZzY1ZXd4YWxlIn0.biMHmiflvaKOKMjZ2FA3IQ'] %>">
 </div>

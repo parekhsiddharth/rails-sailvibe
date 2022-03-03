@@ -9,6 +9,7 @@ class YachtsController < ApplicationController
         lat: yacht.latitude,
         lng: yacht.longitude
       }
+    end
   end
 
   def show

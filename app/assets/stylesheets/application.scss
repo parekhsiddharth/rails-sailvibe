@@ -13,6 +13,8 @@
 @import "components/index";
 @import "pages/index";
 
+// Mapbox
+@import "mapbox-gl/dist/mapbox-gl";
 * {
   box-sizing: border-box;
 }
