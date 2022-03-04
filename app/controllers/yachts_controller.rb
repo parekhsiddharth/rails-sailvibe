@@ -4,7 +4,6 @@ class YachtsController < ApplicationController
 
   def index
     @yachts = Yacht.all
-
     @markers = @yachts.geocoded.map do |yacht|
       {
         lat: yacht.latitude,
@@ -25,6 +24,11 @@ class YachtsController < ApplicationController
     @yacht = Yacht.find(params[:id])
     @booking = Booking.new(yacht_id: @yacht.id)
     @review = Review.new(yacht_id: @yacht.id)
+    @markers = [{
+      lat: @yacht.latitude,
+      lng: @yacht.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { yacht: @yacht })
+    }]
   end
 
   def new
